@@ -5,7 +5,7 @@ package Week1;
 // The example below is passing just an array of strings into the main function
 // Every file has to have a class and that class has to be the same as the file name. And within the class, all code has to be nested in a method
 
-public class Monday {
+public class HelloWorld {
     /***
      * Task 1 - Just do a simple hello world. Note that for the code to be executable, there needs to be a main method in the class definition
      * @param args
