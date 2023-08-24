@@ -10,8 +10,8 @@ public class HelloWorld {
      * Task 1 - Just do a simple hello world. Note that for the code to be executable, there needs to be a main method in the class definition
      * @param args
      */
-    public static void helloWorld (String[] args) {
-        System.out.println("Hello World" + '\n');
+   public static void helloWorld(String[] args) {
+        System.out.println(5);
     }
 
     public static void main (String[] args) {
