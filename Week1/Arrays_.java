@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 // Goal here is to create an array based on first integer I supply, then I will supply n amount of Employee IDs, and then the array will be created
-// Then want to sort the array and and print out all numbers within the array
+// Then want to sort the array and print out all numbers within the array
 public class Arrays_ {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
