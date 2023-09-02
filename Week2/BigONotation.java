@@ -5,8 +5,11 @@ package Week2;
  *      Make an algorithm to find all combinations of integers a,b,c that add up to n.
  *      badSolution is a brute force approach and runs in O(n^3) time, due to 3 nested loops that all go to n iterations
  *          - this solution is going through every combination of a,b,c
+ *          - note that by doing a third nested loop, you have to go through the c loop n times, but you also have to go back through the a and b loops n times AGAIN
  *      goodSolution is an optimized approach and runs in O(n^2) time since the function has 2 nested loops, each going up to n iterations
  *          - this solution goes through every combo of a and b, then it sees if n-(a+b) = c is a positive or negative value. if its non-negative, then this is another valid combo that adds up to n
+ *
+ *      Ex: if n = 100, the good solution would have 100^2 iterations (10,000). Whereas the bad solution would have 100^3 iterations (1,000,000)
  */
 
 /**
