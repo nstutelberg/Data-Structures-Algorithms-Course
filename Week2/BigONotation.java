@@ -77,9 +77,9 @@ public class BigONotation {
     }
 
     public static void main(String[] args) {
-        int resultGood = goodSolution(1000);
+        int resultGood = goodSolution(5000);
         System.out.println(resultGood);
-        int resultBad = badSolution(1000);
+        int resultBad = badSolution(5000);
         System.out.println(resultBad);
 
     }
