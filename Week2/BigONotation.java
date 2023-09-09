@@ -37,7 +37,14 @@ package Week2;
  *             |
  */
 public class BigONotation {
-    static int goodSolution(int n) {
+    public static void main(String[] args) {
+        int resultGood = goodSolution(5000);
+        System.out.println(resultGood);
+        int resultBad = badSolution(5000);
+        System.out.println(resultBad);
+    }
+
+    public static int goodSolution(int n) {
         int solutions = 0;
         // go through every potential value for a
         for (int i = 0; i <= n; i++) {
@@ -55,7 +62,7 @@ public class BigONotation {
         return solutions;
     }
 
-    static int badSolution(int n) {
+    public static int badSolution(int n) {
         int solutions = 0;
         // go through every potential value for a
         for (int i = 0; i <= n; i++) {
@@ -74,13 +81,5 @@ public class BigONotation {
             }
         }
         return solutions;
-    }
-
-    public static void main(String[] args) {
-        int resultGood = goodSolution(5000);
-        System.out.println(resultGood);
-        int resultBad = badSolution(5000);
-        System.out.println(resultBad);
-
     }
 }

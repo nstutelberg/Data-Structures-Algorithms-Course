@@ -48,7 +48,15 @@ public class ReferencePrimitiveTypes {
             return -1;
         }
 
-        public static void main(String[] args) {
+    /**
+     * NOTE: you can create a function that can be used for strings and ints
+     * There can be two functions with the exact same name as long as their input parameters are different
+     * This is helpful if you want to use the function for strings and integers, and don't want to create two different named functions
+     * Just pass a string or an int into the function call, and it will work.
+     * I didn't show an example here because strings and ints use `==` and `.equals`, so I can't reuse the same function in this case without it being annoying to do
+     */
+
+    public static void main(String[] args) {
             int[] a = {1,2,3,4,5,6,7,8,9,10};
             String[] b = {"a", "b", "c", "d", "e", "f", "g"};
             int resultA = findInt(a, 8);
