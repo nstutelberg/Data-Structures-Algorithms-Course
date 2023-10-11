@@ -7,7 +7,7 @@ public class BinarySearch {
     public static void main(String[] args) {
 
         // First create and populate the array with some numbers
-        int[] searchArray = new int[10];
+        int[] searchArray = new int[100];
         for (int i = 0; i < searchArray.length; i++) {
             searchArray[i] = i + 1;
         }
@@ -17,10 +17,10 @@ public class BinarySearch {
         }
 
         // Call binary search and save value into variable and print the result
-        int binarySearchResult = binarySearch(4, searchArray);
+        int binarySearchResult = binarySearch(57, searchArray);
         System.out.println("\nPosition of the target value in the array: " + binarySearchResult);
 
-        int binarySearchResult2 = binarySearch(11, searchArray);
+        int binarySearchResult2 = binarySearch(111, searchArray);
         System.out.println("\nPosition of the target value in the array: " + binarySearchResult2);
 
     }
@@ -35,6 +35,8 @@ public class BinarySearch {
         while (left <= right) {
 
             // Have to make sure that you are updating mid while in the loop since the search subarray should change for every loop
+            // The single `/` is integer division, so the number will always be rounded down And in the else/if statements, see how the mid is either added by 1 or subtracted by 1. This
+            // is meant so you don't check the same range twice
             int mid = ((right - left) / 2) + left;
             System.out.println("\nthe middle value is " + mid);
 
@@ -49,6 +51,7 @@ public class BinarySearch {
                 left = mid + 1;
             }
         }
+        // Case here is if nothing is found. Standard case is to return -1
         return -1;
     }
 }
