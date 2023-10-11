@@ -25,57 +25,68 @@ package Week7;
  *
  * Height of trees: Height is 1 if there is only the root. Every extra layer after that adds an extra level of height
  *
+ * How to structure a tree: Say you have a root node of 50. This means that in no way can any value in the left branching path be larger than 50.
+ *      Left Subtree Property: All nodes in the left subtree of a node should have values less than the value of N.
+ *      Right Subtree Property: All nodes in the right subtree of a node should have values greater than the value of N.
+ *      Binary Search Property: Both the left and right subtrees must also be binary search trees.
+ *
  * Balance of trees: Take a node, then look at its two children. Get the difference of the heights of the children nodes, and if that difference is in (-1,0,1) for every single node,
  *      then the tree is balanced. If you look at the below example, x has a height of 2 and C has a height of 1. 2-1 = 1 so that's good. Now look at the children of x. A and B both have heights
  *      of 1, so 1-1=0 so that's good. So in this case the tree below is balanced
  *
- *  Basic idea of Right Rotation (RR) and Left Rotation (LR) on binary tree:
- *  Right Rotation (used when the left subtree is heavier):
+ * Adding nodes: This is a recursive process, because as you go down through all the nodes/branches to see where to insert this new node (beacuse you need to sort the binary tree and have the
+ *      new inserted node go into its proper place), all the recursive functions will return values all the way up and down the tree, so you can rebalance the tree at the same time as you
+ *      insert this new node, since you are vising all the nodes anyway. After you insert the node, then you can either rotate left or rotate right such that from the root, all children are balanced
+ *      Remember that a main property of a binary search tree is that elements are in order
  *
- *       y                               x
- *      / \     Right Rotation         / \
- *     x   C   – – – – – – – >        A   y
+ *        N                               N                                             C          heights -> A = 0 - 0 = 0
+ *       / \     Insert new node        /   \          rotate right to balance        /  \                    N = 2 - 1 = 1
+ *      C   T   – – – – – – – >        C     T         - - - - - - - - - - - >       A     N                  D = 1 - 0 = 1
+ *     / \                            / \                                                 / \                 T = 0 - 0 = 0
+ *    A   D                          A   D                                               D  T     result -> balanced
+ *                                    \                                                 /
+ *                                     B                                               B
+ *
+ * Rotating nodes: Used when one subtree is heavier, and the binary tree is unbalanced. In a rotation, note that they are local,
+ *      and the branches further down in the tree after the rotator link are left alone.
+ *      IMPORTANT: if you want to do binary search you need binary trees sorted. And a sorted binary tree means that for every parent, it's left child must be less than it, and
+ *      it's right child must be more than it
+ *
+ *
+ *
+ *       N                               H
+ *      / \     Right Rotation          / \
+ *     H   T   – – – – – – – >         C   N
  *    / \                                 / \
- *   A   B                               B   C
+ *   C   L                               L   T
  *
  *  Left Rotation (used when the right subtree is heavier):
- *     x                               y
+ *     G                               Y
  *    / \     Left Rotation           / \
- *   A   y   – – – – – – – >         x   C
+ *   A   Y   – – – – – – – >         G   Z
  *      / \                         / \
- *     B   C                       A   B
+ *     B   Z                       A   B
  *
  *
  *      * Right Rotation:
  *      *
- *      *         z                              y
- *      *        / \        ---->               /  \
- *      *       y   D                          x    z
- *      *      / \                            / \   / \
- *      *     x   C                          A  B  C   D
- *      *    / \
- *      *   A   B
- *      *
- *      * Explanation:
- *      * The tree is rotated around the node 'z'. 'y' becomes the new root, 'z' becomes the right child of 'y',
- *      * and 'C', previously the right child of 'y', becomes the left child of 'z'.
+ *      *         31                              17
+ *      *        / \        ---->                /  \
+ *      *      17   71                         10    31
+ *      *      / \                            / \    / \
+ *      *    10   27                         9  16  27  71
+ *      *   /  \
+ *      *   9   16
  *      *
  *      * Left Rotation:
  *      *
- *      *         x                              y
- *      *        / \        ---->              /  \
- *      *       A   y                         x    z
- *      *          / \                       / \  / \
- *      *         B   z                     A  B  C  D
- *      *            / \
- *      *           C   D
- *      *
- *      * Explanation:
- *      * The tree is rotated around the node 'x'. 'y' becomes the new root, 'x' becomes the left child of 'y',
- *      * and 'B', previously the left child of 'y', becomes the right child of 'x'.
-
- *  Note that after rotation, the tree must still be a valid binary search tree!
- *  In a rotation, note that they are local, and the branches further down in the tree after the rotator link are left alone.
+ *      *         20                             40
+ *      *        /  \        ---->              /  \
+ *      *       10   40                        20   60
+ *      *           /  \                      / \   / \
+ *      *          30   60                   10 30  50 70
+ *      *               / \
+ *      *               50  70
  *  */
 
 public class SearchTrees {
