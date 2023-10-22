@@ -47,7 +47,7 @@ public class Lower_UpperBound {
         while (left < right) {
             int mid = ((right - left) / 2) + left;;
 
-            // Checking whether the element at the mid index is less than or equal to the target value. If target val is less than or equal to the mid element, then the upper bound must be
+            // Checking whether the element at the mid index is less than or equal to the target value. If target val is greater than or equal to the mid element, then the upper bound must be
             // to the right of mid. So left is set to mid + 1. This is the case where the target value is here |------mid---x---|
             // Basically saying `if (inputArray[mid] <= targetVal)`
             if (inputArray[mid].compareTo(targetVal) <= 0) {

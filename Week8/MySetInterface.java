@@ -1,4 +1,4 @@
-package Week7;
+package Week8;
 /*
  * A Set in Java represents a collection of elements (similar to List and Map), but unlike
  * List, it does not allow duplicate elements. This means that every element in a Set must
@@ -56,11 +56,17 @@ package Week7;
  *    - When you need to perform set operations like union, intersection, and difference.
  *    - When you need to quickly check if an element is present in a collection (due to the
  *      O(1) access time in HashSet).
- *
- * Be sure to choose the specific Set implementation that best suits the needs of your
- * particular use case, taking into account factors such as ordering, speed, and
- * null-handling capabilities.
  */
 
-public class Sets {
+// Define the interface for a set. The interface allows you to define methods that classes can implement. This adds modularity and keeps commonly used functions in one place,
+// And you can reuse them in any file just by calling the interface.
+
+// There will always be one file that has all the logic for the functions, one file that is used as a template to implement them and create the interface, and another that uses the interface
+public interface MySetInterface<E> {
+    void add(E e);      // Add an element to the set
+    void remove(E e);   // Remove an element from the set
+    boolean contains(E e); // Check if an element exists in the set
+    int size();         // Return the size of the set
+    boolean isEmpty();  // Check if the set is empty
 }
+
