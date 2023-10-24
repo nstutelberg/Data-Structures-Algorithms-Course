@@ -68,5 +68,6 @@ public interface MySetInterface<E> {
     boolean contains(E e); // Check if an element exists in the set
     int size();         // Return the size of the set
     boolean isEmpty();  // Check if the set is empty
+    int recomputeHeight();
 }
 
