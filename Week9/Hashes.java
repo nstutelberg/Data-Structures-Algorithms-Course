@@ -23,7 +23,11 @@ package Week9;
  *
 
  * Time Complexity:
- * Adding an element and getting an element all run in O(1) time.
+ * Insertion, deletion, and finding an element all run in O(1) time ASSUMING there are no collisions
+ *      Insertion is O(1) because the calculation to generate the index is O(1), and if the index is empty, inserting is O(1).
+ *      Deletion is O(1) because the hash calculation, accessing the index, and removing the entry are all constant time
+ *      Finding/Searching is O(1) because you just calculate teh index and see if the key at that index matches the searched key
+ *
  */
 public class Hashes {
 }
