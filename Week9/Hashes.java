@@ -3,7 +3,7 @@ package Week9;
 /**
  * Overview:
  * Hashes are codes given that uniquely identify something. They are a 32 bit integer key to represent an object. A way to generate hash codes is to use prime numbers, and
- * multiplying prime numbers by other prime numbers. In java, hash tables are just arrays with hash codes
+ * multiplying prime numbers by other prime numbers. In java, hash tables are just arrays with hash codes. PYTHON IMPLEMENTS ITS DICTIONARY AS A HASH TABLE UNDER THE HOOD! COOL!
  *
  * How to Give a Hash Value for any Given Value (Key):
  * key ----> function to generate hash code ----> output integer -----> %M modulo operator to divide the has code to an index value -----> output index value of where key is stored

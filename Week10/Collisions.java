@@ -15,11 +15,16 @@ package Week10;
  * 3) Having the same hash code. This is extremely rare but the hashCode() method count potentially return the same hash code
  *
  * Ways to Prevent Collisions
- * 1) Separate Chaining: O(1)
+ * 1) Separate Chaining:
+ *      Time Complexity:
+ *      O(1) but takes up more space since you are storing linked lists within the cells
+ *
+ *      Overview:
  *      Each slot in the hash table contains a pointer to a linked list or a tree that stores all the key value pairs mapping to the same index. If multiple keys hash to the same
  *      index, their entries are added to the end of the list at that index. So if you store a linked list at the index, you can put as many data entries in that linked list
  *      as you want, since it will only occupy one index.
  *
+ *      Operations:
  *      a) Insertion
  *          Compute the hash code and find the index. If the linked list at the index is empty, create a new list with the key value pair. If not, append the key value pair to the
  *          linked list.
@@ -28,13 +33,19 @@ package Week10;
  *      c) Deletion
  *          Compute the hash code for the key to find the index. Then traverse the linked list at current index, find the key, then remove the corresponding node from the list
  *
- * 2) Linear Probing (Open Hashing)
+ * 2) Linear Probing (Open Hashing): O(1)
+ *      Time Complexity:
+ *      O(1) but takes up more space since you are storing linked lists within the cells
+ *
+ *      Overview:
  *      In this method, you just place the colliding item in the next available slot in the array. It does this by checking all next available indices after the current index
  *      until it finds an empty slot. If there is not an available slot, the hash table is full, and there will be an insertion failure and you need to resize the table.
  *      Remember an efficient way if the hash table is full is to double the size, and then insert at the next open slot.
  *
+ *      Operations:
  *      a) Insertion
- *          Start at current index and look at every following index until an empty slot is there
+ *          Start at current index and look at every following index until an empty slot is there. If you reach the end of the hash table, you loop around back to index 0,
+ *          then keep searching until you get back to the starting index. If there is no open space, only then should you resize.
  *      b) Search
  *          Start the search at the current index and go one by one until you find the element or you reach the end of the hash table
  *      c) Deletion
