@@ -3,13 +3,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.TreeSet;
 import java.util.Scanner;
 
 /**
  * Goal here is to take the txt file, read in word by word, clean up the spaces and commas and upper/lowercase and then append to a big long string.
  * Then with that big long string read in the words one at a time and then we can add these words to a set to find the distinct words etc
  */
-public class HashSetWordCounter {
+public class Tree_And_SetWordCounter {
     /**
      * Method to clean up the input strings
      * @param s
@@ -44,11 +45,12 @@ public class HashSetWordCounter {
         // that acts with scanner to give the next character when scanner requests it. Just declaring `fs` does not
         // save the entire contents of the file into `fs`. It merely opens the data stream to where other things
         // like scanner can read from the file
-        FileInputStream fs = new FileInputStream("tiny_tale.txt");
+        FileInputStream fs = new FileInputStream("C:\\Users\\nstut\\git\\Data-Structures-Algorithms-Course\\Week10\\tiny_tale.txt");
         Scanner fileScanner = new Scanner(fs);
 
-        // Declare a hash set of strings so that only unique words will be stored
-        HashSet<String> uniqueWords = new HashSet<String>();
+        // Declare a hash set of strings so that only unique words will be stored. Use an arraylist for all the words since you can only use .add() on an arraylist not an array
+        HashSet<String> uniqueWordsHash = new HashSet<String>();
+        TreeSet<String> uniqueWordsTree = new TreeSet<String>();
         ArrayList<String> allWords = new ArrayList<>();
 
         // As long as fileScanner has a word to read from the data stream `fs`, loop continues. Note that scanner
@@ -58,13 +60,24 @@ public class HashSetWordCounter {
         while (fileScanner.hasNext()) {
             String s = fileScanner.next();
             s = cleanString(s);
-            uniqueWords.add(s);
+            uniqueWordsHash.add(s);
+            uniqueWordsTree.add(s);
             allWords.add(s);
         }
         fileScanner.close();
 
-        System.out.printf("There were %d unique words in the file", uniqueWords.size());
-        System.out.printf("There were %d total words in the file,", allWords.size());
+        System.out.printf("\nThere were %d total words in the file -> ", allWords.size());
+        System.out.println(allWords);
+
+        // Notice how hash set prints in a random order because hash sets do not preserve ordering
+        System.out.printf("There were %d unique words in the file -> ", uniqueWordsHash.size());
+        System.out.println(uniqueWordsHash);
+
+        // Notice how a tree set prints in alphabetical order because tree set implementation in java util defaults to sorting things in ascending order
+        System.out.printf("There were %d unique words in the file -> ", uniqueWordsTree.size());
+        System.out.println(uniqueWordsTree);
+
+
     }
 
 
