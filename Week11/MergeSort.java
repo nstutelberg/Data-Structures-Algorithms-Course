@@ -25,8 +25,8 @@ package Week11;
  * Merge sort is NOT done in-place. You need new arrays to move things around in. So it is not as space-efficient as other algorithms like insertion sort which is in-place. It is also a stable
  * sorting algorithm, so even when there are duplicate records, their initial relative order is preserved.
  * The algorithm is O(NlogN) because it is O(N) to move up the layers and merge them and sort them. Each layer of merging and sorting is O(N), so O(N) + O(N) + O(N) etc is just O(N). But
- * it is NlogN because although you have O(N) work at each level, there are O(logN) total levels because it's a divide and conquer algorithm like binary search
- *
+ * it is NlogN because although you have O(N) work at each level, there are O(logN) total levels because it's a divide and conquer algorithm like binary search. Merge sort can actually
+ * run 100x or 150x faster than insertion sort O(N^2) and selection sort O(N^2)!!!
  *
  */
 
