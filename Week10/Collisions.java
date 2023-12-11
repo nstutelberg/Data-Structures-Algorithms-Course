@@ -35,7 +35,7 @@ package Week10;
  *
  * 2) Linear Probing (Open Hashing): O(1)
  *      Time Complexity:
- *      O(1) but takes up more space since you are storing linked lists within the cells
+ *      O(1)
  *
  *      Overview:
  *      In this method, you just place the colliding item in the next available slot in the array. It does this by checking all next available indices after the current index

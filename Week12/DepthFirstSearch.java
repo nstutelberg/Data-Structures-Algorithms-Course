@@ -19,7 +19,7 @@ package Week12;
  *
  * DFS Flow. Nodes that have already been visited are crossed out and marked by (-):
  * node A, the unexplored edges are -> B/E/F
- * node B, the unexplored edges are -> A/F/C
+ * node B, the unexplored edges are -> -A/F/C
  * node C, the unexplored edges are -> D/G
  * node D, the unexplored edges are -> G/H
  * node G, the unexplored edges are -> -C/-D/J/K/L

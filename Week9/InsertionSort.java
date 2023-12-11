@@ -2,7 +2,7 @@ package Week9;
 
 /**
  * Overview:
- * When you add a new element, you run an upperBound() function at the current index element, and that finds the next element that is higher than the current element. Whereever
+ * When you add a new element, you run an upperBound() function at the current index element, and that finds the next element that is higher than the current element. Wherever
  * this breakpoint is, that is where you are going to take the new element at the end, and replace it with the index that upperBound() found. Then you will have to shift all elements
  * to the right by one space to make room for this element you just inserted from the last position in the array. This is an in-place sorting algorithm.
  *

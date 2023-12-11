@@ -1,12 +1,12 @@
 package Week8;
 /*
  * A Set in Java represents a collection of elements (similar to List and Map), but unlike
- * List, it does not allow duplicate elements. This means that every element in a Set must
- * be unique. The Java Collections Framework provides several implementations of the Set
+ * List, it does not allow duplicate elements. This means that every element in a Set muste Set
  * interface, each with its own characteristics and use cases.
  *
  * 1. HashSet:
- *    - It uses a hash table for storage, ensuring O(1) complexity for basic operations
+ *    - It uses a hash table for storage, ensuring O(1) complexity for basic operati
+ * be unique. The Java Collections Framework provides several implementations of thons
  *      (add, remove, contains).
  *    - It does not guarantee any specific order of the elements.
  *

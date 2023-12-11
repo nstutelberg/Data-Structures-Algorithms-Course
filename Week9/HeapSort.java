@@ -16,10 +16,10 @@ package Week9;
  *         29     15
  *        /
  *       4
- * Ex: [84,29,15,4,      100,104,110,120,140,170,200] ... See how this is one array, but the first 4 elements are still part of the heap, and the
+ * Ex: [84,29,15,4,      100,140,200] ... See how this is one array, but the first 4 elements are still part of the heap, and the
  *             29                                         rest of the elements have already been removed and sorted. Every time you remove an element,
  *           /   \                                        then you add another element to the sorted array and take one element from the heap. If you
- *         4     15                                       removed one more element, then it would be [29,4,15,         84,100,104,110,120,140,170,200].
+ *         4     15                                       removed one more element, then it would be [29,4,15,         84,110,140,200].
  *                                                        Since 84 is removed first as the top of the heap, then 4 replaces it. But now 29 bubbles up
  *                                                        to swap with 4 to heapify the heap and make it a max heap again
  *
